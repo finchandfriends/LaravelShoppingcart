@@ -347,7 +347,7 @@ class Cart
             return $subTotal + ($cartItem->qty * $cartItem->price);
         }, 0);
 
-        $subTotal = $subTotal - $this->discounts(); 
+        $subTotal -= $this->discounts(null, null, null, true); 
 
         return $this->numberFormat($subTotal, $decimals, $decimalPoint, $thousandSeperator);
     }
